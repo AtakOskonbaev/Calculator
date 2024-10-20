@@ -22,19 +22,12 @@ public class CalculatorController {
     {
         Button clickedButton = (Button) event.getSource();
         String value = clickedButton.getText();
-        if (Objects.equals(value, "0"))
-        {
-            output.setText("Cannot start with 0");
-        }
-        else
-        {
-            currentInput.append(value);
-            output.setText(currentInput.toString());
-            if (!isOperand1Set) {
-                calc.setOperand1(Double.parseDouble(currentInput.toString()));
-            } else {
-                calc.setOperand2(Double.parseDouble(currentInput.toString()));
-            }
+        currentInput.append(value);
+        output.setText(currentInput.toString());
+        if (!isOperand1Set) {
+            calc.setOperand1(Double.parseDouble(currentInput.toString()));
+        } else {
+            calc.setOperand2(Double.parseDouble(currentInput.toString()));
         }
     }
 
